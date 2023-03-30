@@ -22,7 +22,7 @@ namespace LinkedListAlgo
 				while (currentNode != null)
 				{
 					currentNode.PrintElement();
-					currentNode = currentNode.nextNode;
+					currentNode = currentNode.NextNode;
 				}
 			}
 			else
@@ -41,8 +41,8 @@ namespace LinkedListAlgo
 				}
 				else
 				{
-					nodeTail.nextNode = new ListNode(values[i], null, nodeTail);
-					nodeTail = nodeTail.nextNode;
+					nodeTail.NextNode = new ListNode(values[i], null, nodeTail);
+					nodeTail = nodeTail.NextNode;
 				}
 			}
 		}
@@ -57,8 +57,8 @@ namespace LinkedListAlgo
 			}
 			else
 			{
-				nodeTail.nextNode = new ListNode(value, null, nodeTail);
-				nodeTail = nodeTail.nextNode;
+				nodeTail.NextNode = new ListNode(value, null, nodeTail);
+				nodeTail = nodeTail.NextNode;
 			}
 		}
 		public void SearchNode(int value)
@@ -67,12 +67,12 @@ namespace LinkedListAlgo
 			ListNode? currentNode = nodeHead;
 			while (currentNode != null)
 			{
-				if (currentNode.value == value)
+				if (currentNode.Value == value)
 				{
 					Console.WriteLine($"Value is at index {index}");
 					return;
 				}
-				currentNode = currentNode.nextNode;
+				currentNode = currentNode.NextNode;
 				index++;
 
 			}
@@ -84,12 +84,12 @@ namespace LinkedListAlgo
 			{
 				ListNode? currentNode = nodeHead;
 				int index = 0;
-				if (currentNode.value == value)
+				if (currentNode.Value == value)
 				{
-					nodeHead = currentNode.nextNode;
+					nodeHead = currentNode.NextNode;
 					if (nodeHead != null)
 					{
-						nodeHead.prevNode = null;
+						nodeHead.PrevNode = null;
 						Console.WriteLine("NodeHead removed");
 						return;
 					}
@@ -105,27 +105,27 @@ namespace LinkedListAlgo
 					while (currentNode != null)
 					{
 						index++;
-						if (currentNode.value == value)
+						if (currentNode.Value == value)
 						{
 							ListNode tempNode;
 
-							if (currentNode.nextNode != null)
+							if (currentNode.NextNode != null)
 							{
-								currentNode.prevNode.nextNode = currentNode.nextNode;
-								currentNode.nextNode.prevNode = currentNode.prevNode;
+								currentNode.PrevNode.NextNode = currentNode.NextNode;
+								currentNode.NextNode.PrevNode = currentNode.PrevNode;
 								Console.WriteLine($"Element at index {index} succesfully removed");
 								return;
 							}
 							else // next is null
 							{
 
-								nodeTail = nodeTail.prevNode;
-								nodeTail.nextNode = null;
+								nodeTail = nodeTail.PrevNode;
+								nodeTail.NextNode = null;
 								Console.WriteLine($"NodeTail succesfully removed");
 								return;
 							}
 						}
-						currentNode = currentNode.nextNode;
+						currentNode = currentNode.NextNode;
 					}
 					Console.WriteLine($"Element of value {value} is not in the list");
 				}
@@ -139,8 +139,8 @@ namespace LinkedListAlgo
 		{
 			if (nodeHead != null) 
 			{
-				nodeHead.prevNode = new ListNode(value, nodeHead, null);
-				nodeHead = nodeHead.prevNode;
+				nodeHead.PrevNode = new ListNode(value, nodeHead, null);
+				nodeHead = nodeHead.PrevNode;
 			}
 		}
 		public void IndexOf(int indexValue)
@@ -150,7 +150,7 @@ namespace LinkedListAlgo
 				int currentIndex = 0;
 				if (indexValue == 0)
 				{
-					Console.WriteLine($"nodeHead value is {nodeHead.value}");
+					Console.WriteLine($"nodeHead value is {nodeHead.Value}");
 				}
 				else
 				{
@@ -158,10 +158,10 @@ namespace LinkedListAlgo
 					while (currentNode != null)
 					{
 						currentIndex++;
-						currentNode = currentNode.nextNode;
+						currentNode = currentNode.NextNode;
 						if (currentIndex == indexValue)
 						{
-							Console.WriteLine($"Element at index {indexValue} is equal to {currentNode.value}");
+							Console.WriteLine($"Element at index {indexValue} is equal to {currentNode.Value}");
 							return;
 						}
 					}

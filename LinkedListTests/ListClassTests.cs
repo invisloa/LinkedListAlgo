@@ -20,8 +20,8 @@ public class ListClassTests
 		list.AddElement(2);
 
 		// Assert
-		Assert.Equal(1, list.NodeHead?.value);
-		Assert.Equal(2, list.NodeTail?.value);
+		Assert.Equal(1, list.NodeHead?.Value);
+		Assert.Equal(2, list.NodeTail?.Value);
 	}
 
 	[Fact]
@@ -34,9 +34,9 @@ public class ListClassTests
 		list.InitializeNewList(1, 2, 3);
 
 		// Assert
-		Assert.Equal(1, list.NodeHead?.value);
-		Assert.Equal(2, list.NodeHead?.nextNode?.value);
-		Assert.Equal(3, list.NodeTail?.value);
+		Assert.Equal(1, list.NodeHead?.Value);
+		Assert.Equal(2, list.NodeHead?.NextNode?.Value);
+		Assert.Equal(3, list.NodeTail?.Value);
 	}
 
 	[Fact]
@@ -50,9 +50,9 @@ public class ListClassTests
 		list.Prepend(0);
 
 		// Assert
-		Assert.Equal(0, list.NodeHead?.value);
-		Assert.Equal(1, list.NodeHead?.nextNode?.value);
-		Assert.Equal(3, list.NodeTail?.value);
+		Assert.Equal(0, list.NodeHead?.Value);
+		Assert.Equal(1, list.NodeHead?.NextNode?.Value);
+		Assert.Equal(3, list.NodeTail?.Value);
 	}
 
 	[Fact]
@@ -67,10 +67,10 @@ public class ListClassTests
 		//Assert
 		Assert.NotNull(list.NodeHead);
 		Assert.NotNull(list.NodeTail);
-		Assert.Equal(1, list.NodeHead?.value);
+		Assert.Equal(1, list.NodeHead?.Value);
 		Assert.Equal(list.NodeHead, list.NodeTail);
-		Assert.Null(list.NodeHead?.prevNode);
-		Assert.Null(list.NodeTail?.nextNode);
+		Assert.Null(list.NodeHead?.PrevNode);
+		Assert.Null(list.NodeTail?.NextNode);
 	}
 
 	[Fact]
@@ -85,10 +85,10 @@ public class ListClassTests
 		//Assert
 		Assert.NotNull(list.NodeHead);
 		Assert.NotNull(list.NodeTail);
-		Assert.Equal(1, list.NodeHead?.value);
-		Assert.Equal(4, list.NodeTail?.value);
-		Assert.Null(list.NodeHead?.prevNode);
-		Assert.Null(list.NodeTail?.nextNode);
+		Assert.Equal(1, list.NodeHead?.Value);
+		Assert.Equal(4, list.NodeTail?.Value);
+		Assert.Null(list.NodeHead?.PrevNode);
+		Assert.Null(list.NodeTail?.NextNode);
 	}
 
 	[Fact]
@@ -104,10 +104,10 @@ public class ListClassTests
 		//Assert
 		Assert.NotNull(list.NodeHead);
 		Assert.NotNull(list.NodeTail);
-		Assert.Equal(1, list.NodeHead?.value);
-		Assert.Equal(4, list.NodeTail?.value);
-		Assert.Null(list.NodeHead?.prevNode);
-		Assert.Null(list.NodeTail?.nextNode);
+		Assert.Equal(1, list.NodeHead?.Value);
+		Assert.Equal(4, list.NodeTail?.Value);
+		Assert.Null(list.NodeHead?.PrevNode);
+		Assert.Null(list.NodeTail?.NextNode);
 	}
 
 	[Fact]
@@ -138,9 +138,9 @@ public class ListClassTests
 		//Assert
 		Assert.NotNull(list.NodeHead);
 		Assert.NotNull(list.NodeTail);
-		Assert.Equal(1, list.NodeHead?.value);
-		Assert.Equal(5, list.NodeTail?.value);
-		Assert.Null(list.NodeHead?.prevNode);
-		Assert.Null(list.NodeTail?.nextNode);
+		Assert.Equal(1, list.NodeHead?.Value);
+		Assert.Equal(5, list.NodeTail?.Value);
+		Assert.Null(list.NodeHead?.PrevNode);
+		Assert.Null(list.NodeTail?.NextNode);
 	}
 }
